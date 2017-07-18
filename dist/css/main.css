@@ -479,6 +479,7 @@ figure {
       -ms-flex-align: end;
           align-items: flex-end;
   background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid #F7F7F7;
   border-radius: 10px;
   padding: 1em;
   color: #F7F7F7;

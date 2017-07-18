@@ -1,6 +1,3 @@
-$c-base: #F7F7F7;
-$c-grey--light: #888;
-$c-grey: #333;
 $c-case--base: rgba(255, 255, 255, .2);
 $c-card--1: #434A42;
 $c-card--2: #626C66;
@@ -24,6 +21,7 @@ $radius-default: 10px;
     display: flex;
     align-items: flex-end;
     background-color: $c-case--base;
+    border: 1px solid $c-base;
     border-radius: $radius-default;
     padding: 1em;
     color: $c-base;
