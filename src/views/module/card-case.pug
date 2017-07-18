@@ -1,18 +1,19 @@
-.card-case
-  h1.title-main Rex Tsou
-  .btn-set
-    button.btn.btn-about(data-to="about") 關於我
-    button.btn.btn-ability(data-to="ability") 專業能力
-    button.btn.btn-blog(data-to="blog") 網誌
-    button.btn.btn-works(data-to="works") 作品集
-  .card-set
-    figure.card(data-card="about")
-      .card-content
-    figure.card(data-card="ability")
-      .card-content
-    figure.card(data-card="blog")
-      .card-content
-        a(href="", target="_blank", rel="noopener")
-          h2.title-card 為了可能的聲音
-    figure.card(data-card="works")
-      .card-content
+.card-case-container
+  .card-case
+    h1.title-main Rex Tsou
+    .btn-set
+      button.btn.btn-about(data-to="about", title="關於我")
+      button.btn.btn-ability(data-to="ability", title="專業能力")
+      button.btn.btn-blog(data-to="blog", title="網誌")
+      button.btn.btn-works(data-to="works", title="作品集")
+    .card-set.case-mask
+      figure.card.card-about(data-card="about")
+        .card-content
+      figure.card.card-ability(data-card="ability")
+        .card-content
+      figure.card.card-blog(data-card="blog")
+        .card-content
+          a(href="", target="_blank", rel="noopener")
+            h2.title-card 為了可能的聲音
+      figure.card.card-works(data-card="works")
+        .card-content

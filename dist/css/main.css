@@ -436,3 +436,106 @@ template {
  */
 [hidden] {
   display: none; }
+
+html,
+body {
+  min-height: 100vh;
+  background: #000; }
+
+a {
+  color: inherit; }
+  a:link, a:visited, a:hover, a:active {
+    color: inherit;
+    text-decoration: none; }
+
+button {
+  border: none; }
+
+figure {
+  margin: 0; }
+
+.card-case-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.card-case {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1em;
+  color: #F7F7F7;
+  width: 80%; }
+  @media (min-width: 600px) {
+    .card-case {
+      width: 500px; } }
+  .card-case .case-mask {
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    -webkit-filter: blur(3px);
+            filter: blur(3px);
+    overflow: hidden;
+    border-radius: 10px; }
+  .card-case .title-main {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+  .card-case .btn-set {
+    display: inline-block;
+    width: 45px; }
+    .card-case .btn-set .btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      -webkit-box-shadow: inset -2px -2px 2px #F7F7F7, inset 1px 1px 2px #888;
+              box-shadow: inset -2px -2px 2px #F7F7F7, inset 1px 1px 2px #888;
+      cursor: pointer; }
+      .card-case .btn-set .btn-about {
+        background-color: #434A42; }
+      .card-case .btn-set .btn-ability {
+        background-color: #626C66; }
+      .card-case .btn-set .btn-blog {
+        background-color: #918B76; }
+      .card-case .btn-set .btn-works {
+        background-color: #ACA885; }
+  .card-case .card-set {
+    z-index: -1; }
+    .card-case .card-set .card {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 10px; }
+      .card-case .card-set .card-about {
+        background: #434A42;
+        opacity: .8; }
+      .card-case .card-set .card-ability {
+        background: #626C66;
+        opacity: .8; }
+      .card-case .card-set .card-blog {
+        background: #918B76;
+        opacity: .8; }
+      .card-case .card-set .card-works {
+        background: #ACA885;
+        opacity: .8; }

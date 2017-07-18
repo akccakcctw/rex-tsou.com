@@ -1,0 +1,97 @@
+$c-base: #F7F7F7;
+$c-grey--light: #888;
+$c-grey: #333;
+$c-case--base: rgba(255, 255, 255, .2);
+$c-card--1: #434A42;
+$c-card--2: #626C66;
+$c-card--3: #918B76;
+$c-card--4: #ACA885;
+$c-card--5: #E1CA96;
+$radius-default: 10px;
+.card-case-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-case {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    background-color: $c-case--base;
+    border-radius: $radius-default;
+    padding: 1em;
+    color: $c-base;
+    width: 80%;
+    @include for-tablet-portrait-up {
+        width: 500px;
+    }
+    .case-mask {
+        position: absolute;
+        left: 2px;
+        right: 2px;
+        top: 2px;
+        bottom: 2px;
+        filter: blur(3px);
+        overflow: hidden;
+        border-radius: $radius-default;
+    }
+    .title-main {
+        flex: 1; // text-shadow: 1px 1px 7px rgba(#000, .3), 1px 1px 1px rgba(#000, .9);
+    }
+    .btn-set {
+        display: inline-block;
+        width: 45px;
+        .btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            box-shadow: inset -2px -2px 2px $c-base, inset 1px 1px 2px $c-grey--light;
+            cursor: pointer;
+            &-about {
+                background-color: $c-card--1;
+            }
+            &-ability {
+                background-color: $c-card--2;
+            }
+            &-blog {
+                background-color: $c-card--3;
+            }
+            &-works {
+                background-color: $c-card--4;
+            }
+        }
+    }
+    .card-set {
+        z-index: -1;
+        .card {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: $radius-default;
+            &-about {
+                background: $c-card--1;
+                opacity: .8;
+            }
+            &-ability {
+                background: $c-card--2;
+                opacity: .8;
+            }
+            &-blog {
+                background: $c-card--3;
+                opacity: .8;
+            }
+            &-works {
+                background: $c-card--4;
+                opacity: .8;
+            }
+        }
+    }
+}
