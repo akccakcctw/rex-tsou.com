@@ -50,6 +50,8 @@ $radius-default: 10px;
             height: 45px;
             border-radius: 50%;
             box-shadow: inset -2px -2px 2px $c-base, inset 1px 1px 2px $c-grey--light;
+            font-size: 1.4em;
+            color: $c-base;
             cursor: pointer;
             &-about {
                 background-color: $c-card--1;
