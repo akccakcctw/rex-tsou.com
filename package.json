@@ -1,0 +1,37 @@
+{
+  "name": "rex-tsou.com",
+  "version": "0.1.0",
+  "description": "website",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp"
+  },
+  "keywords": [
+    "website"
+  ],
+  "author": "Rex Tsou",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "*",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "*",
+    "browser-sync": "*",
+    "eslint": "*",
+    "eslint-config-airbnb-base": "*",
+    "eslint-plugin-import": "*",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "*",
+    "gulp-babel": "*",
+    "gulp-file": "^0.3.0",
+    "gulp-load-plugins": "*",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^2.0.0",
+    "rollup": "^0.45.2",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-uglify": "^2.0.1"
+  }
+}
