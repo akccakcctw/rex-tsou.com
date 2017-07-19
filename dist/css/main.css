@@ -521,6 +521,14 @@ figure {
         background-color: #918B76; }
       .card-case .btn-set .btn-works {
         background-color: #ACA885; }
+  .card-case .card {
+    -webkit-transition: .7s ease-in-out;
+    transition: .7s ease-in-out;
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.2); }
+    .card-case .card.is-hover {
+      -webkit-transform: translateX(35px);
+              transform: translateX(35px); }
   .card-case .card-set {
     z-index: -1; }
     .card-case .card-set .card {
@@ -531,14 +539,33 @@ figure {
       width: 100%;
       border-radius: 10px; }
       .card-case .card-set .card-about {
-        background: #434A42;
-        opacity: .8; }
+        background: #434A42; }
       .card-case .card-set .card-ability {
-        background: #626C66;
-        opacity: .8; }
+        background: #626C66; }
       .card-case .card-set .card-blog {
-        background: #918B76;
-        opacity: .8; }
+        background: #918B76; }
       .card-case .card-set .card-works {
-        background: #ACA885;
-        opacity: .8; }
+        background: #ACA885; }
+  .card-case .card-real {
+    z-index: -1;
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    border-radius: 10px; }
+    .card-case .card-real .card {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: 10px; }
+      .card-case .card-real .card-about {
+        background: #434A42; }
+      .card-case .card-real .card-ability {
+        background: #626C66; }
+      .card-case .card-real .card-blog {
+        background: #918B76; }
+      .card-case .card-real .card-works {
+        background: #ACA885; }

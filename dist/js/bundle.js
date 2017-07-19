@@ -4,6 +4,16 @@
 	(factory());
 }(this, (function () { 'use strict';
 
+var btnList = document.querySelectorAll('.card-case .btn-set .btn');
+
+[].forEach.call(btnList, function (btn) {
+  btn.addEventListener('mouseenter', function (e) {
+    var currentBtn = e.currentTarget.dataset.to;
+  });
+  btn.addEventListener('mouseleave', function (e) {});
+});
+
+/* eslint no-unused-vars:0 */
 document.addEventListener('DOMContentLoaded', function () {
   console.log('rex-tsou.com');
 });

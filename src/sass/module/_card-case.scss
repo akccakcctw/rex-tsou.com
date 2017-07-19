@@ -67,6 +67,13 @@ $radius-default: 10px;
             }
         }
     }
+    .card {
+        transition: .7s ease-in-out;
+        box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+        &.is-hover {
+            transform: translateX(35px);
+        }
+    }
     .card-set {
         z-index: -1;
         .card {
@@ -78,19 +85,44 @@ $radius-default: 10px;
             border-radius: $radius-default;
             &-about {
                 background: $c-card--1;
-                opacity: .8;
             }
             &-ability {
                 background: $c-card--2;
-                opacity: .8;
             }
             &-blog {
                 background: $c-card--3;
-                opacity: .8;
             }
             &-works {
                 background: $c-card--4;
-                opacity: .8;
+            }
+        }
+    }
+    .card-real {
+        z-index: -1;
+        position: absolute;
+        left: 2px;
+        right: 2px;
+        top: 2px;
+        bottom: 2px;
+        border-radius: 10px;
+        .card {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: $radius-default;
+            &-about {
+                background: $c-card--1;
+            }
+            &-ability {
+                background: $c-card--2;
+            }
+            &-blog {
+                background: $c-card--3;
+            }
+            &-works {
+                background: $c-card--4;
             }
         }
     }
