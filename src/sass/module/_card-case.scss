@@ -73,6 +73,10 @@ $radius-default: 10px;
         &.is-hover {
             transform: translateX(35px);
         }
+        &.is-taken {
+            transform: translateX(100%);
+            margin-left: 10px;
+        }
     }
     .card-set {
         z-index: -1;

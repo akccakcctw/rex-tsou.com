@@ -529,6 +529,10 @@ figure {
     .card-case .card.is-hover {
       -webkit-transform: translateX(35px);
               transform: translateX(35px); }
+    .card-case .card.is-taken {
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+      margin-left: 10px; }
   .card-case .card-set {
     z-index: -1; }
     .card-case .card-set .card {
