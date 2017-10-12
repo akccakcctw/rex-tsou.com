@@ -1,18 +1,23 @@
 const btnList = document.querySelectorAll('.card-case .btn-set .btn');
-const getTargetCardReal = (e) => {
+const cards = document.querySelectorAll('.card-case .cards .card');
+
+const getCard = (e) => {
   const currentBtn = e.currentTarget.dataset.to;
-  return document.querySelector(`.card-real .card-${currentBtn}`);
+  return document.querySelector(`.cards .card-${currentBtn}`);
 };
 const enterBtn = (e) => {
-  const targetCard = getTargetCardReal(e);
+  const targetCard = getCard(e);
   targetCard.classList.add('is-hover');
 };
 const leaveBtn = (e) => {
-  const targetCard = getTargetCardReal(e);
+  const targetCard = getCard(e);
   targetCard.classList.remove('is-hover');
 };
 const takeCard = (e) => {
-  const targetCard = getTargetCardReal(e);
+  cards.forEach(card => {
+    card.classList.remove('is-taken');
+  })
+  const targetCard = getCard(e);
   targetCard.classList.toggle('is-taken');
 };
 

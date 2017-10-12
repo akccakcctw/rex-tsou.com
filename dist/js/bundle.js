@@ -5,20 +5,25 @@
 }(this, (function () { 'use strict';
 
 var btnList = document.querySelectorAll('.card-case .btn-set .btn');
-var getTargetCardReal = function getTargetCardReal(e) {
+var cards = document.querySelectorAll('.card-case .cards .card');
+
+var getCard = function getCard(e) {
   var currentBtn = e.currentTarget.dataset.to;
-  return document.querySelector('.card-real .card-' + currentBtn);
+  return document.querySelector('.cards .card-' + currentBtn);
 };
 var enterBtn = function enterBtn(e) {
-  var targetCard = getTargetCardReal(e);
+  var targetCard = getCard(e);
   targetCard.classList.add('is-hover');
 };
 var leaveBtn = function leaveBtn(e) {
-  var targetCard = getTargetCardReal(e);
+  var targetCard = getCard(e);
   targetCard.classList.remove('is-hover');
 };
 var takeCard = function takeCard(e) {
-  var targetCard = getTargetCardReal(e);
+  cards.forEach(function (card) {
+    card.classList.remove('is-taken');
+  });
+  var targetCard = getCard(e);
   targetCard.classList.toggle('is-taken');
 };
 

@@ -550,7 +550,7 @@ figure {
         background: #918B76; }
       .card-case .card-set .card-works {
         background: #ACA885; }
-  .card-case .card-real {
+  .card-case .cards {
     z-index: -1;
     position: absolute;
     left: 2px;
@@ -558,18 +558,18 @@ figure {
     top: 2px;
     bottom: 2px;
     border-radius: 10px; }
-    .card-case .card-real .card {
+    .card-case .cards .card {
       position: absolute;
       left: 0;
       top: 0;
       height: 100%;
       width: 100%;
       border-radius: 10px; }
-      .card-case .card-real .card-about {
+      .card-case .cards .card-about {
         background: #434A42; }
-      .card-case .card-real .card-ability {
+      .card-case .cards .card-ability {
         background: #626C66; }
-      .card-case .card-real .card-blog {
+      .card-case .cards .card-blog {
         background: #918B76; }
-      .card-case .card-real .card-works {
+      .card-case .cards .card-works {
         background: #ACA885; }
