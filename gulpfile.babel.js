@@ -7,14 +7,14 @@ import uglify from 'rollup-plugin-uglify';
 
 const $ = gulpLoadPlugins();
 
-gulp.task('default', ['css', 'js', 'views']);
+gulp.task('default', ['css', 'js', 'views', 'imagemin']);
 
 gulp.task('browserSync', ['default'], () => {
   browserSync.init({
     notify: false,
     port: 8000,
     server: {
-      baseDir: 'dist'
+      baseDir: 'dist',
     },
   });
 });
@@ -36,9 +36,8 @@ gulp.task('css', () => {
       includePath: ['.'],
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer({ browsers: ['last 2 versions'] }))
-    .pipe(gulp.dest('dist/css')) // output folder
-    .pipe(browserSync.stream())
-  // .pipe($.notify("Compile Sass Complete!"))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('css-min', () => {
@@ -51,15 +50,15 @@ gulp.task('css-min', () => {
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer({ browsers: ['last 2 versions'] }))
     .pipe($.rename({ suffix: '.min' }))
-    .pipe(gulp.dest('dist/css')) // output folder
+    .pipe(gulp.dest('dist/css'))
     .pipe($.notify({
       message: 'Minify Sass Complete!',
       onLast: true,
-    }))
+    }));
 });
 
 gulp.task('js', () => rollup({
-  entry: 'src/js/main.js',
+  input: 'src/js/main.js',
   plugins: [
     babel({
       presets: [
@@ -72,16 +71,15 @@ gulp.task('js', () => rollup({
 })
   .then(bundle => bundle.generate({
     format: 'umd',
-    moduleName: 'myModuleName',
+    name: 'myModuleName',
   }))
   .then(gen => $.file('bundle.js', gen.code, { src: true })
     .pipe(gulp.dest('dist/js'))
-    .pipe(browserSync.stream()),
-  ),
+    .pipe(browserSync.stream())),
 );
 
 gulp.task('js-min', () => rollup({
-  entry: 'src/js/main.js',
+  input: 'src/js/main.js',
   plugins: [
     babel({
       presets: [
@@ -95,7 +93,7 @@ gulp.task('js-min', () => rollup({
 })
   .then(bundle => bundle.generate({
     format: 'umd',
-    moduleName: 'myModuleName',
+    name: 'myModuleName',
   }))
   .then(gen => $.file('bundle.min.js', gen.code, { src: true })
     .pipe(gulp.dest('dist/js'))),
@@ -107,7 +105,13 @@ gulp.task('views', () => {
     .pipe($.pug({
       pretty: true,
     }))
-    .pipe(gulp.dest('dist')) // output folder
-    .pipe(browserSync.stream())
-  // .pipe($.notify("Compile Pug Complete!"))
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('imagemin', () => {
+  gulp.src('src/assets/**/*')
+    .pipe($.plumber())
+    .pipe($.imagemin())
+    .pipe(gulp.dest('dist/assets'));
 });
