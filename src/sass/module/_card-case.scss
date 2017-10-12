@@ -1,4 +1,4 @@
-$c-case--base: rgba(255, 255, 255, .2);
+$c-case--base: img-url('materials/silver.jpg');
 $c-card--1: #434A42;
 $c-card--2: #626C66;
 $c-card--3: #918B76;
@@ -20,7 +20,7 @@ $radius-default: 10px;
   position: relative;
   display: flex;
   align-items: flex-end;
-  background-color: $c-case--base;
+  background: $c-case--base;
   border: 1px solid $c-base;
   border-radius: $radius-default;
   padding: 1em;

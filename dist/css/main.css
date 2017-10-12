@@ -478,7 +478,7 @@ figure {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  background-color: rgba(255, 255, 255, 0.2);
+  background: url("../assets/materials/silver.jpg");
   border: 1px solid #F7F7F7;
   border-radius: 10px;
   padding: 1em;
