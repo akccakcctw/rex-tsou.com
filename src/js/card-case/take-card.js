@@ -14,9 +14,9 @@ const leaveBtn = (e) => {
   targetCard.classList.remove('is-hover');
 };
 const takeCard = (e) => {
-  cards.forEach(card => {
+  cards.forEach((card) => {
     card.classList.remove('is-taken');
-  })
+  });
   const targetCard = getCard(e);
   targetCard.classList.toggle('is-taken');
 };
