@@ -11,6 +11,10 @@ body {
   font-family: $f-default;
 }
 
+img {
+  max-width: 100%;
+}
+
 a {
   color: inherit;
   display: inline-block;

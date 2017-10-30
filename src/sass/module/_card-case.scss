@@ -1,8 +1,8 @@
 $c-case--base: img-url('materials/silver.jpg');
-$c-card--1: #434A42;
-$c-card--2: #626C66;
-$c-card--3: #918B76;
-$c-card--4: #ACA885;
+$c-card--1: #A2AAB7;
+$c-card--2: #CEB49B;
+$c-card--3: #A9BEB7;
+$c-card--4: rgb(199, 140, 143);
 $c-card--5: #E1CA96;
 $radius-default: 10px;
 .card-case-container {
@@ -79,6 +79,9 @@ $radius-default: 10px;
       font-size: 1.4em;
       color: $c-base;
       margin-bottom: 7px;
+      display: flex;
+      justify-content: center;
+      align-content: center;
       cursor: pointer;
       &--about {
         background-color: $c-card--1;
@@ -91,6 +94,13 @@ $radius-default: 10px;
       }
       &--works {
         background-color: $c-card--4;
+        .icon {
+          width: 19px;
+        }
+      }
+      .icon {
+        width: 18px;
+        transform: translate(-1px, -1px);
       }
     }
   }
@@ -133,6 +143,16 @@ $radius-default: 10px;
     height: 100%;
     width: 100%;
     border-radius: $radius-default;
+    transition: .5s ease-in-out;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+    &.is-hover {
+      transform: translateX(35px);
+    }
+    &.is-taken {
+      transform: translateX(100%);
+      margin-left: 10px;
+      max-height: auto;
+    }
     &--about {
       background: $c-card--1;
     }
@@ -144,17 +164,6 @@ $radius-default: 10px;
     }
     &--works {
       background: $c-card--4;
-    }
-  }
-  &__card {
-    transition: .5s ease-in-out;
-    box-shadow: 0 0 2px rgba(0, 0, 0, .2);
-    &.is-hover {
-      transform: translateX(35px);
-    }
-    &.is-taken {
-      transform: translateX(100%);
-      margin-left: 10px;
     }
   }
 }

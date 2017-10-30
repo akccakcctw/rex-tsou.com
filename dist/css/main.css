@@ -451,6 +451,9 @@ body {
   letter-spacing: .8px;
   font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", "Droid Sans", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif; }
 
+img {
+  max-width: 100%; }
+
 a {
   color: inherit;
   display: inline-block;
@@ -578,15 +581,29 @@ figure {
       font-size: 1.4em;
       color: #F7F7F7;
       margin-bottom: 7px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
       cursor: pointer; }
       .card-case__btn-set .btn--about {
-        background-color: #434A42; }
+        background-color: #A2AAB7; }
       .card-case__btn-set .btn--ability {
-        background-color: #626C66; }
+        background-color: #CEB49B; }
       .card-case__btn-set .btn--blog {
-        background-color: #918B76; }
+        background-color: #A9BEB7; }
       .card-case__btn-set .btn--works {
-        background-color: #ACA885; }
+        background-color: #c78c8f; }
+        .card-case__btn-set .btn--works .icon {
+          width: 19px; }
+      .card-case__btn-set .btn .icon {
+        width: 18px;
+        -webkit-transform: translate(-1px, -1px);
+                transform: translate(-1px, -1px); }
   .card-case__cards {
     z-index: -1; }
     .card-case__cards .card {
@@ -596,13 +613,13 @@ figure {
       width: 100%;
       border-radius: 10px; }
       .card-case__cards .card--about {
-        background: #434A42; }
+        background: #A2AAB7; }
       .card-case__cards .card--ability {
-        background: #626C66; }
+        background: #CEB49B; }
       .card-case__cards .card--blog {
-        background: #918B76; }
+        background: #A9BEB7; }
       .card-case__cards .card--works {
-        background: #ACA885; }
+        background: #c78c8f; }
 
 .cards {
   z-index: -1;
@@ -618,16 +635,7 @@ figure {
     top: 0;
     height: 100%;
     width: 100%;
-    border-radius: 10px; }
-    .cards__card--about {
-      background: #434A42; }
-    .cards__card--ability {
-      background: #626C66; }
-    .cards__card--blog {
-      background: #918B76; }
-    .cards__card--works {
-      background: #ACA885; }
-  .cards__card {
+    border-radius: 10px;
     -webkit-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
     -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
@@ -638,7 +646,16 @@ figure {
     .cards__card.is-taken {
       -webkit-transform: translateX(100%);
               transform: translateX(100%);
-      margin-left: 10px; }
+      margin-left: 10px;
+      max-height: auto; }
+    .cards__card--about {
+      background: #A2AAB7; }
+    .cards__card--ability {
+      background: #CEB49B; }
+    .cards__card--blog {
+      background: #A9BEB7; }
+    .cards__card--works {
+      background: #c78c8f; }
 
 .card {
   padding: .5rem 1rem;
