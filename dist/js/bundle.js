@@ -11,7 +11,7 @@ var cards = cardCase.querySelectorAll('.cards .card');
 
 var getCard = function getCard(e) {
   var currentBtn = e.currentTarget.dataset.to;
-  return document.querySelector('.cards .card-' + currentBtn);
+  return document.querySelector('[data-card="' + currentBtn + '"]');
 };
 var enterBtn = function enterBtn(e) {
   var targetCard = getCard(e);

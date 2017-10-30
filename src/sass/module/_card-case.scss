@@ -12,45 +12,61 @@ $radius-default: 10px;
   right: 0;
   bottom: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   margin: 20px;
   transition: 1s ease-in-out;
   &.is-active {
-    justify-content: flex-start;
-    align-items: flex-start;
+    .card-case {
+      top: 0;
+      left: 0;
+      transform: translate(0);
+    }
   }
 }
 
 .card-case {
   position: relative;
   display: flex;
+  height: 200px;
   align-items: flex-end;
-  background: $c-case--base;
   border: 1px solid $c-base;
   border-radius: $radius-default;
   padding: 1em;
   color: $c-base;
   width: 80%;
+  top: 50%;
+  left: 50%;
+  transition: 1.6s ease-in-out;
+  transform: translate(-50%, -50%);
   @include for-tablet-portrait-up {
     width: 500px;
   }
-  .case-mask {
+  &__material {
     position: absolute;
-    left: 2px;
-    right: 2px;
-    top: 2px;
-    bottom: 2px;
-    filter: blur(3px);
-    overflow: hidden;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: $c-case--base;
     border-radius: $radius-default;
   }
-  .title-main {
+  &__title-main {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+    margin: 15px;
     flex: 1; // text-shadow: 1px 1px 7px rgba(#000, .3), 1px 1px 1px rgba(#000, .9);
   }
-  .btn-set {
+  &__btn-set {
+    position: absolute;
     display: inline-block;
     width: 45px;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    margin: 15px;
     .btn {
       width: 45px;
       height: 45px;
@@ -59,22 +75,75 @@ $radius-default: 10px;
       font-size: 1.4em;
       color: $c-base;
       cursor: pointer;
-      &-about {
+      &--about {
         background-color: $c-card--1;
       }
-      &-ability {
+      &--ability {
         background-color: $c-card--2;
       }
-      &-blog {
+      &--blog {
         background-color: $c-card--3;
       }
-      &-works {
+      &--works {
         background-color: $c-card--4;
       }
     }
   }
-  .card {
-    transition: .7s ease-in-out;
+  &__cards {
+    z-index: -1;
+    .card {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      border-radius: $radius-default;
+      &--about {
+        background: $c-card--1;
+      }
+      &--ability {
+        background: $c-card--2;
+      }
+      &--blog {
+        background: $c-card--3;
+      }
+      &--works {
+        background: $c-card--4;
+      }
+    }
+  }
+}
+
+.cards {
+  z-index: -1;
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  top: 2px;
+  bottom: 2px;
+  border-radius: 10px;
+  &__card {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: $radius-default;
+    &--about {
+      background: $c-card--1;
+    }
+    &--ability {
+      background: $c-card--2;
+    }
+    &--blog {
+      background: $c-card--3;
+    }
+    &--works {
+      background: $c-card--4;
+    }
+  }
+  &__card {
+    transition: .5s ease-in-out;
     box-shadow: 0 0 2px rgba(0, 0, 0, .2);
     &.is-hover {
       transform: translateX(35px);
@@ -82,58 +151,6 @@ $radius-default: 10px;
     &.is-taken {
       transform: translateX(100%);
       margin-left: 10px;
-    }
-  }
-  .card-set {
-    z-index: -1;
-    .card {
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      border-radius: $radius-default;
-      &-about {
-        background: $c-card--1;
-      }
-      &-ability {
-        background: $c-card--2;
-      }
-      &-blog {
-        background: $c-card--3;
-      }
-      &-works {
-        background: $c-card--4;
-      }
-    }
-  }
-  .cards {
-    z-index: -1;
-    position: absolute;
-    left: 2px;
-    right: 2px;
-    top: 2px;
-    bottom: 2px;
-    border-radius: 10px;
-    .card {
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      border-radius: $radius-default;
-      &-about {
-        background: $c-card--1;
-      }
-      &-ability {
-        background: $c-card--2;
-      }
-      &-blog {
-        background: $c-card--3;
-      }
-      &-works {
-        background: $c-card--4;
-      }
     }
   }
 }

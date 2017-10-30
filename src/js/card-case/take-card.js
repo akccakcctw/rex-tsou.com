@@ -1,5 +1,3 @@
-import * as utils from '../utils/index';
-
 const caseContainer = document.querySelector('.card-case-container');
 const cardCase = document.querySelector('.card-case');
 const btnList = cardCase.querySelectorAll('.btn-set .btn');
@@ -7,7 +5,7 @@ const cards = cardCase.querySelectorAll('.cards .card');
 
 const getCard = (e) => {
   const currentBtn = e.currentTarget.dataset.to;
-  return document.querySelector(`.cards .card-${currentBtn}`);
+  return document.querySelector(`[data-card="${currentBtn}"]`);
 };
 const enterBtn = (e) => {
   const targetCard = getCard(e);

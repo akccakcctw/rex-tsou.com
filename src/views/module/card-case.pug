@@ -1,23 +1,24 @@
 .card-case-container
   .card-case
-    h1.title-main Rex Tsou
-    .btn-set
-      button.btn.btn-about(data-to="about", title="關於我")
+    h1.card-case__title-main Rex Tsou
+    .card-case__btn-set.btn-set
+      button.btn.btn--about(data-to="about", title="關於我")
         i.fa.fa-user(aria-hidden="true")
-      button.btn.btn-ability(data-to="ability", title="專業能力")
+      button.btn.btn--ability(data-to="ability", title="專業能力")
         i.fa.fa-tasks(aria-hidden="true")
-      button.btn.btn-blog(data-to="blog", title="網誌")
+      button.btn.btn--blog(data-to="blog", title="網誌")
         i.fa.fa-paragraph(aria-hidden="true")
-      button.btn.btn-works(data-to="works", title="作品集")
+      button.btn.btn--works(data-to="works", title="作品集")
         i.fa.fa-code(aria-hidden="true")
-    .cards
-      figure.card.card-about(data-card="about")
+    .card-case__material
+    .card-case__cards.cards
+      figure.cards__card.card.card--about(data-card="about")
         .card-content
-      figure.card.card-ability(data-card="ability")
+      figure.cards__card.card.card--ability(data-card="ability")
         .card-content
-      figure.card.card-blog(data-card="blog")
+      figure.cards__card.card.card--blog(data-card="blog")
         .card-content
-          a(href="", target="_blank", rel="noopener")
+          a(href="https://akccakcctw.github.io/", target="_blank", rel="noopener")
             h2.title-card 為了可能的聲音
-      figure.card.card-works(data-card="works")
+      figure.cards__card.card.card--works(data-card="works")
         .card-content
