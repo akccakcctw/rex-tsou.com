@@ -1,5 +1,9 @@
-const btnList = document.querySelectorAll('.card-case .btn-set .btn');
-const cards = document.querySelectorAll('.card-case .cards .card');
+import * as utils from '../utils/index';
+
+const caseContainer = document.querySelector('.card-case-container');
+const cardCase = document.querySelector('.card-case');
+const btnList = cardCase.querySelectorAll('.btn-set .btn');
+const cards = cardCase.querySelectorAll('.cards .card');
 
 const getCard = (e) => {
   const currentBtn = e.currentTarget.dataset.to;
@@ -14,10 +18,13 @@ const leaveBtn = (e) => {
   targetCard.classList.remove('is-hover');
 };
 const takeCard = (e) => {
+  const targetCard = getCard(e);
   cards.forEach((card) => {
     card.classList.remove('is-taken');
   });
-  const targetCard = getCard(e);
+
+  caseContainer.classList.add('is-active');
+
   targetCard.classList.toggle('is-taken');
 };
 

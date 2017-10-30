@@ -4,8 +4,10 @@
 	(factory());
 }(this, (function () { 'use strict';
 
-var btnList = document.querySelectorAll('.card-case .btn-set .btn');
-var cards = document.querySelectorAll('.card-case .cards .card');
+var caseContainer = document.querySelector('.card-case-container');
+var cardCase = document.querySelector('.card-case');
+var btnList = cardCase.querySelectorAll('.btn-set .btn');
+var cards = cardCase.querySelectorAll('.cards .card');
 
 var getCard = function getCard(e) {
   var currentBtn = e.currentTarget.dataset.to;
@@ -20,10 +22,13 @@ var leaveBtn = function leaveBtn(e) {
   targetCard.classList.remove('is-hover');
 };
 var takeCard = function takeCard(e) {
+  var targetCard = getCard(e);
   cards.forEach(function (card) {
     card.classList.remove('is-taken');
   });
-  var targetCard = getCard(e);
+
+  caseContainer.classList.add('is-active');
+
   targetCard.classList.toggle('is-taken');
 };
 

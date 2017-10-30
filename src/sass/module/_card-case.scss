@@ -14,6 +14,12 @@ $radius-default: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 20px;
+  transition: 1s ease-in-out;
+  &.is-active {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }
 
 .card-case {
