@@ -612,14 +612,6 @@ figure {
       top: 0;
       width: 100%;
       border-radius: 10px; }
-      .card-case__cards .card--about {
-        background: #A2AAB7; }
-      .card-case__cards .card--ability {
-        background: #CEB49B; }
-      .card-case__cards .card--blog {
-        background: #A9BEB7; }
-      .card-case__cards .card--works {
-        background: #c78c8f; }
 
 .cards {
   z-index: -1;
@@ -633,7 +625,6 @@ figure {
     position: absolute;
     left: 0;
     top: 0;
-    height: 100%;
     width: 100%;
     border-radius: 10px;
     -webkit-transition: .5s ease-in-out;
@@ -647,20 +638,12 @@ figure {
       -webkit-transform: translateX(100%);
               transform: translateX(100%);
       margin-left: 10px;
-      max-height: auto; }
-    .cards__card--about {
-      background: #A2AAB7; }
-    .cards__card--ability {
-      background: #CEB49B; }
-    .cards__card--blog {
-      background: #A9BEB7; }
-    .cards__card--works {
-      background: #c78c8f; }
+      max-height: none; }
 
 .card {
-  padding: .5rem 1rem;
   min-height: 100%;
-  height: auto; }
+  height: auto;
+  padding: .5rem 1rem; }
   .card__title {
     font-weight: 300;
     letter-spacing: 2px;
@@ -668,3 +651,15 @@ figure {
     margin: .5rem auto;
     display: block;
     width: 100%; }
+  .card--about {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(162, 170, 183, 0.75))), url("../assets/materials/paper.jpg");
+    background-image: linear-gradient(rgba(162, 170, 183, 0.75)), url("../assets/materials/paper.jpg"); }
+  .card--ability {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(206, 180, 155, 0.75))), url("../assets/materials/paper.jpg");
+    background: linear-gradient(rgba(206, 180, 155, 0.75)), url("../assets/materials/paper.jpg"); }
+  .card--blog {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(169, 190, 183, 0.75))), url("../assets/materials/paper.jpg");
+    background: linear-gradient(rgba(169, 190, 183, 0.75)), url("../assets/materials/paper.jpg"); }
+  .card--works {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(199, 140, 143, 0.75))), url("../assets/materials/paper.jpg");
+    background: linear-gradient(rgba(199, 140, 143, 0.75)), url("../assets/materials/paper.jpg"); }

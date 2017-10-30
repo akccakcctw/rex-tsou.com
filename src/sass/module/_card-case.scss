@@ -2,7 +2,9 @@ $c-case--base: img-url('materials/silver.jpg');
 $c-card--1: #A2AAB7;
 $c-card--2: #CEB49B;
 $c-card--3: #A9BEB7;
-$c-card--4: rgb(199, 140, 143);
+$c-card--4: rgb(199,
+140,
+143);
 $c-card--5: #E1CA96;
 $radius-default: 10px;
 .card-case-container {
@@ -112,18 +114,6 @@ $radius-default: 10px;
       top: 0;
       width: 100%;
       border-radius: $radius-default;
-      &--about {
-        background: $c-card--1;
-      }
-      &--ability {
-        background: $c-card--2;
-      }
-      &--blog {
-        background: $c-card--3;
-      }
-      &--works {
-        background: $c-card--4;
-      }
     }
   }
 }
@@ -140,7 +130,6 @@ $radius-default: 10px;
     position: absolute;
     left: 0;
     top: 0;
-    height: 100%;
     width: 100%;
     border-radius: $radius-default;
     transition: .5s ease-in-out;
@@ -151,27 +140,15 @@ $radius-default: 10px;
     &.is-taken {
       transform: translateX(100%);
       margin-left: 10px;
-      max-height: auto;
-    }
-    &--about {
-      background: $c-card--1;
-    }
-    &--ability {
-      background: $c-card--2;
-    }
-    &--blog {
-      background: $c-card--3;
-    }
-    &--works {
-      background: $c-card--4;
+      max-height: none;
     }
   }
 }
 
 .card {
-  padding: .5rem 1rem;
   min-height: 100%;
   height: auto;
+  padding: .5rem 1rem;
   &__content {}
   &__title {
     font-weight: 300;
@@ -180,5 +157,17 @@ $radius-default: 10px;
     margin: .5rem auto;
     display: block;
     width: 100%;
+  }
+  &--about {
+    background-image: linear-gradient(rgba($c-card--1, .75)), img-url('materials/paper.jpg');
+  }
+  &--ability {
+    background: linear-gradient(rgba($c-card--2, .75)), img-url('materials/paper.jpg');
+  }
+  &--blog {
+    background: linear-gradient(rgba($c-card--3, .75)), img-url('materials/paper.jpg');
+  }
+  &--works {
+    background: linear-gradient(rgba($c-card--4, .75)), img-url('materials/paper.jpg');
   }
 }
