@@ -1,0 +1,21 @@
+.footer {
+  font-family: $f-title;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+  color: #FFF;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(to right, rgba(143, 141, 141, 0.856), transparent);
+  }
+}

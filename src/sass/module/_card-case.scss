@@ -15,6 +15,7 @@ $radius-default: 10px;
   justify-content: flex-start;
   align-items: flex-start;
   margin: 20px;
+  margin-bottom: $h-footer;
   transition: 1s ease-in-out;
   &.is-active {
     .card-case {
@@ -28,7 +29,7 @@ $radius-default: 10px;
 .card-case {
   position: relative;
   display: flex;
-  height: 200px;
+  height: 230px;
   align-items: flex-end;
   border: 1px solid $c-base;
   border-radius: $radius-default;
@@ -37,7 +38,7 @@ $radius-default: 10px;
   width: 80%;
   top: 50%;
   left: 50%;
-  transition: 1.6s ease-in-out;
+  transition: all 1.6s ease-in-out, width 0s;
   transform: translate(-50%, -50%);
   @include for-tablet-portrait-up {
     width: 500px;
@@ -54,10 +55,13 @@ $radius-default: 10px;
   &__title-main {
     position: absolute;
     z-index: 2;
-    left: 0;
+    color: $c-grey;
+    left: 15px;
     bottom: 0;
     margin: 15px;
-    flex: 1; // text-shadow: 1px 1px 7px rgba(#000, .3), 1px 1px 1px rgba(#000, .9);
+    flex: 1;
+    font-family: $f-title;
+    text-shadow: 1px 1px 0 rgba(140, 140, 140, 0.6), -1px -1px 1px rgba(0, 0, 0, 0.67);
   }
   &__btn-set {
     position: absolute;
@@ -74,6 +78,7 @@ $radius-default: 10px;
       box-shadow: inset -2px -2px 2px $c-base, inset 1px 1px 2px $c-grey--light;
       font-size: 1.4em;
       color: $c-base;
+      margin-bottom: 7px;
       cursor: pointer;
       &--about {
         background-color: $c-card--1;
@@ -95,7 +100,6 @@ $radius-default: 10px;
       position: absolute;
       left: 0;
       top: 0;
-      height: 100%;
       width: 100%;
       border-radius: $radius-default;
       &--about {
@@ -152,5 +156,20 @@ $radius-default: 10px;
       transform: translateX(100%);
       margin-left: 10px;
     }
+  }
+}
+
+.card {
+  padding: .5rem 1rem;
+  min-height: 100%;
+  height: auto;
+  &__content {}
+  &__title {
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 1.28;
+    margin: .5rem auto;
+    display: block;
+    width: 100%;
   }
 }
