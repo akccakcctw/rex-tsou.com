@@ -2,9 +2,7 @@ $c-case--base: img-url('materials/silver.jpg');
 $c-card--1: #A2AAB7;
 $c-card--2: #CEB49B;
 $c-card--3: #A9BEB7;
-$c-card--4: rgb(199,
-140,
-143);
+$c-card--4: #C78C8F;
 $c-card--5: #E1CA96;
 $radius-default: 10px;
 .card-case-container {
@@ -17,7 +15,9 @@ $radius-default: 10px;
   justify-content: flex-start;
   align-items: flex-start;
   margin: 20px;
-  margin-bottom: $h-footer;
+  margin-bottom: $h-footer + 20 ;
+  overflow: auto;
+  overflow-x: hidden;
   transition: 1s ease-in-out;
   &.is-active {
     .card-case {
@@ -132,15 +132,16 @@ $radius-default: 10px;
     top: 0;
     width: 100%;
     border-radius: $radius-default;
-    transition: .5s ease-in-out;
+    transition: 1s ease-in-out;
     box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+    max-height: 100%;
+    overflow: hidden;
     &.is-hover {
       transform: translateX(35px);
     }
     &.is-taken {
       transform: translateX(100%);
       margin-left: 10px;
-      max-height: none;
     }
   }
 }

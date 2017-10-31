@@ -512,7 +512,9 @@ figure {
       -ms-flex-align: start;
           align-items: flex-start;
   margin: 20px;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
+  overflow: auto;
+  overflow-x: hidden;
   -webkit-transition: 1s ease-in-out;
   transition: 1s ease-in-out; }
   .card-case-container.is-active .card-case {
@@ -597,7 +599,7 @@ figure {
       .card-case__btn-set .btn--blog {
         background-color: #A9BEB7; }
       .card-case__btn-set .btn--works {
-        background-color: #c78c8f; }
+        background-color: #C78C8F; }
         .card-case__btn-set .btn--works .icon {
           width: 19px; }
       .card-case__btn-set .btn .icon {
@@ -627,18 +629,19 @@ figure {
     top: 0;
     width: 100%;
     border-radius: 10px;
-    -webkit-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
+    -webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
     -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
-            box-shadow: 0 0 2px rgba(0, 0, 0, 0.2); }
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    max-height: 100%;
+    overflow: hidden; }
     .cards__card.is-hover {
       -webkit-transform: translateX(35px);
               transform: translateX(35px); }
     .cards__card.is-taken {
       -webkit-transform: translateX(100%);
               transform: translateX(100%);
-      margin-left: 10px;
-      max-height: none; }
+      margin-left: 10px; }
 
 .card {
   min-height: 100%;

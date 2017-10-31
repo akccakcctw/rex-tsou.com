@@ -4,49 +4,58 @@
 	(factory());
 }(this, (function () { 'use strict';
 
-var caseContainer = document.querySelector('.card-case-container');
-var cardCase = document.querySelector('.card-case');
-var btnList = cardCase.querySelectorAll('.btn-set .btn');
-var cards = cardCase.querySelectorAll('.cards .card');
-
-var getCard = function getCard(e) {
-  var currentBtn = e.currentTarget.dataset.to;
+var getCard = function getCard(el) {
+  var currentBtn = el.dataset.to;
   return document.querySelector('[data-card="' + currentBtn + '"]');
 };
-var enterBtn = function enterBtn(e) {
-  var targetCard = getCard(e);
+var enterBtn = function enterBtn(el) {
+  var targetCard = getCard(el);
   targetCard.classList.add('is-hover');
 };
-var leaveBtn = function leaveBtn(e) {
-  var targetCard = getCard(e);
+var leaveBtn = function leaveBtn(el) {
+  var targetCard = getCard(el);
   targetCard.classList.remove('is-hover');
 };
-var takeCard = function takeCard(e) {
-  var targetCard = getCard(e);
-  cards.forEach(function (card) {
-    card.classList.remove('is-taken');
-  });
-
-  caseContainer.classList.add('is-active');
-
+var takeCard = function takeCard(el) {
+  var targetCard = getCard(el);
   targetCard.classList.toggle('is-taken');
 };
 
-[].forEach.call(btnList, function (btn) {
-  btn.addEventListener('mouseenter', function (e) {
-    enterBtn(e);
-  });
-  btn.addEventListener('mouseleave', function (e) {
-    leaveBtn(e);
-  });
-  btn.addEventListener('click', function (e) {
-    takeCard(e);
-  });
-});
+var expandCard = function expandCard(el) {
+  var targetCard = getCard(el);
+  var targetContent = targetCard.querySelector('.card__content');
+  targetCard.style.maxHeight = targetContent.getBoundingClientRect().height + 30 + 'px';
+};
 
 /* eslint no-unused-vars:0 */
+/* global Velocity */
 document.addEventListener('DOMContentLoaded', function () {
+  var caseContainer = document.querySelector('.card-case-container');
+  var caseEl = document.querySelector('.card-case');
+  var btnList = caseEl.querySelectorAll('.btn-set .btn');
+  var cards = caseEl.querySelectorAll('.cards .card');
   console.log('rex-tsou.com');
+
+  [].forEach.call(btnList, function (btn) {
+    btn.addEventListener('mouseenter', function (e) {
+      enterBtn(e.currentTarget);
+    });
+    btn.addEventListener('mouseleave', function (e) {
+      leaveBtn(e.currentTarget);
+    });
+    btn.addEventListener('click', function (e) {
+      var el = e.currentTarget;
+      cards.forEach(function (card) {
+        card.classList.remove('is-taken');
+        card.style.maxHeight = '100%';
+      });
+      caseContainer.classList.add('is-active');
+      takeCard(el);
+      setTimeout(function () {
+        expandCard(el);
+      }, 1500);
+    });
+  });
 });
 
 })));

@@ -1,39 +1,22 @@
-const caseContainer = document.querySelector('.card-case-container');
-const cardCase = document.querySelector('.card-case');
-const btnList = cardCase.querySelectorAll('.btn-set .btn');
-const cards = cardCase.querySelectorAll('.cards .card');
-
-const getCard = (e) => {
-  const currentBtn = e.currentTarget.dataset.to;
+export const getCard = (el) => {
+  const currentBtn = el.dataset.to;
   return document.querySelector(`[data-card="${currentBtn}"]`);
 };
-const enterBtn = (e) => {
-  const targetCard = getCard(e);
+export const enterBtn = (el) => {
+  const targetCard = getCard(el);
   targetCard.classList.add('is-hover');
 };
-const leaveBtn = (e) => {
-  const targetCard = getCard(e);
+export const leaveBtn = (el) => {
+  const targetCard = getCard(el);
   targetCard.classList.remove('is-hover');
 };
-const takeCard = (e) => {
-  const targetCard = getCard(e);
-  cards.forEach((card) => {
-    card.classList.remove('is-taken');
-  });
-
-  caseContainer.classList.add('is-active');
-
+export const takeCard = (el) => {
+  const targetCard = getCard(el);
   targetCard.classList.toggle('is-taken');
 };
 
-[].forEach.call(btnList, (btn) => {
-  btn.addEventListener('mouseenter', (e) => {
-    enterBtn(e);
-  });
-  btn.addEventListener('mouseleave', (e) => {
-    leaveBtn(e);
-  });
-  btn.addEventListener('click', (e) => {
-    takeCard(e);
-  });
-});
+export const expandCard = (el) => {
+  const targetCard = getCard(el);
+  const targetContent = targetCard.querySelector('.card__content');
+  targetCard.style.maxHeight = `${targetContent.getBoundingClientRect().height + 30}px`;
+};
