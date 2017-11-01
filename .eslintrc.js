@@ -12,6 +12,7 @@ module.exports = {
     "no-param-reassign": 0,
   },
   "globals": {
+    "d3": true,
     "Velocity": true,
   }
 };

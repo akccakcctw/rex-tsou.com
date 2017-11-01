@@ -41,6 +41,41 @@ var packCard = function packCard(el, cb) {
   }
 };
 
+var skills = [{
+  name: 'HTML5 API',
+  level: 2
+}, {
+  name: 'CSS / SCSS',
+  level: 3
+}, {
+  name: 'JavaScript',
+  level: 3
+}, {
+  name: 'SEO',
+  level: 2
+}, {
+  name: 'Vue.js',
+  level: 2
+}, {
+  name: 'Git',
+  level: 3
+}, {
+  name: '瀏覽器兼容性',
+  level: 2
+}, {
+  name: '效能調校',
+  level: 2
+}, {
+  name: 'Unix-like CLI',
+  level: 2
+}, {
+  name: 'Bash',
+  level: 1
+}, {
+  name: 'PHP',
+  level: 1
+}];
+
 document.addEventListener('DOMContentLoaded', function () {
   var caseContainer = document.querySelector('.card-case-container');
   var caseEl = document.querySelector('.card-case');
@@ -63,6 +98,50 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
+
+  var drawSkill = function drawSkill(data) {
+    var margin = {
+      top: 5,
+      right: 40,
+      bottom: 20,
+      left: 20
+    };
+    var circle = {
+      r: 10
+    };
+    var chart = d3.select('svg.skill');
+    var group = chart.selectAll('g').data(data).enter().append('g');
+
+    chart.attr('width', '100%').attr('height', data.length * 35 + margin.top + margin.bottom).style('padding', '40px 20px');
+
+    // create group for skill text
+    group.append('text').classed('skill-text', true).attr('x', 0).attr('y', function (d, i) {
+      return i * 35;
+    }).text(function (d) {
+      return d.name;
+    });
+
+    group.append('circle').classed('skill-circle', true).attr('cx', 150).attr('cy', function (d, i) {
+      return i * 35 - circle.r / 2;
+    }).attr('r', circle.r).style('fill', function (d) {
+      if (d.level >= 1) return '#333';
+      return 'transparent';
+    }).style('stroke', '#111');
+    group.append('circle').classed('skill-circle', true).attr('cx', 180).attr('cy', function (d, i) {
+      return i * 35 - circle.r / 2;
+    }).attr('r', circle.r).style('fill', function (d) {
+      if (d.level >= 2) return '#333';
+      return 'transparent';
+    }).style('stroke', '#111');
+    group.append('circle').classed('skill-circle', true).attr('cx', 210).attr('cy', function (d, i) {
+      return i * 35 - circle.r / 2;
+    }).attr('r', circle.r).style('fill', function (d) {
+      if (d.level >= 3) return '#333';
+      return 'transparent';
+    }).style('stroke', '#111');
+  };
+
+  drawSkill(skills);
 });
 
 })));

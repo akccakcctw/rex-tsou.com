@@ -15,7 +15,7 @@
         <h1 class="card-case__title-main">Rex Tsou</h1>
         <div class="card-case__btn-set btn-set">
           <button class="btn btn--about" data-to="about" title="關於我"><img class="icon" src="assets/icon/avatar.svg" alt=""/></button>
-          <button class="btn btn--ability" data-to="ability" title="專業能力"><img class="icon" src="assets/icon/star.svg" alt=""/></button>
+          <button class="btn btn--skill" data-to="skill" title="專業能力"><img class="icon" src="assets/icon/star.svg" alt=""/></button>
           <button class="btn btn--blog" data-to="blog" title="網誌"><img class="icon" src="assets/icon/edit.svg" alt=""/></button>
           <button class="btn btn--works" data-to="works" title="作品集"><img class="icon" src="assets/icon/code-signs.svg" alt=""/></button>
         </div>
@@ -24,8 +24,10 @@
           <figure class="cards__card card card--about" data-card="about">
             <div class="card__content"></div>
           </figure>
-          <figure class="cards__card card card--ability" data-card="ability">
-            <div class="card__content"></div>
+          <figure class="cards__card card card--skill" data-card="skill">
+            <div class="card__content">
+              <svg class="skill"></svg>
+            </div>
           </figure>
           <figure class="cards__card card card--blog" data-card="blog">
             <div class="card__content"><a href="https://akccakcctw.github.io/" target="_blank" rel="noopener">
@@ -40,6 +42,7 @@
     <footer class="footer">
       <div class="copyright">Copyright © 2019 Rex Tsou. All Rights Reserved.</div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.min.js" integrity="sha256-aYYnqVVhAJ4lDammP4Qybmxg3/HVpA7/sNSCntyCyu4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js" integrity="sha256-/IeNFU9g1Tnj9pOKq3jGgIU2/kiKS+t1Q7pwym7mpoA=" crossorigin="anonymous"></script>
     <script src="js/bundle.js"></script>
   </body>

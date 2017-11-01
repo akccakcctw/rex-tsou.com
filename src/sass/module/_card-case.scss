@@ -88,7 +88,7 @@ $radius-default: 10px;
       &--about {
         background-image: linear-gradient(rgba($c-card--1, .75)), img-url('materials/paper.jpg');
       }
-      &--ability {
+      &--skill {
         background-image: linear-gradient(rgba($c-card--2, .75)), img-url('materials/paper.jpg');
       }
       &--blog {
@@ -161,7 +161,7 @@ $radius-default: 10px;
   &--about {
     background-image: linear-gradient(rgba($c-card--1, .75)), img-url('materials/paper.jpg');
   }
-  &--ability {
+  &--skill {
     background: linear-gradient(rgba($c-card--2, .75)), img-url('materials/paper.jpg');
   }
   &--blog {

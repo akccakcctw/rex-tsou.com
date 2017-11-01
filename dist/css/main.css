@@ -608,7 +608,7 @@ figure {
       .card-case__btn-set .btn--about {
         background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(162, 170, 183, 0.75))), url("../assets/materials/paper.jpg");
         background-image: linear-gradient(rgba(162, 170, 183, 0.75)), url("../assets/materials/paper.jpg"); }
-      .card-case__btn-set .btn--ability {
+      .card-case__btn-set .btn--skill {
         background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(206, 180, 155, 0.75))), url("../assets/materials/paper.jpg");
         background-image: linear-gradient(rgba(206, 180, 155, 0.75)), url("../assets/materials/paper.jpg"); }
       .card-case__btn-set .btn--blog {
@@ -672,7 +672,7 @@ figure {
   .card--about {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(162, 170, 183, 0.75))), url("../assets/materials/paper.jpg");
     background-image: linear-gradient(rgba(162, 170, 183, 0.75)), url("../assets/materials/paper.jpg"); }
-  .card--ability {
+  .card--skill {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(206, 180, 155, 0.75))), url("../assets/materials/paper.jpg");
     background: linear-gradient(rgba(206, 180, 155, 0.75)), url("../assets/materials/paper.jpg"); }
   .card--blog {
