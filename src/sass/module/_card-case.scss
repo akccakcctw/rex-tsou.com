@@ -181,7 +181,6 @@ $radius-default: 10px;
   &--works {
     position: relative;
     perspective: 1000;
-    transition: all 0.2s;
     .card__content {
       padding: 15px 30px;
     }

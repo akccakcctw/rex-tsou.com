@@ -711,9 +711,7 @@ figure {
   .card--works {
     position: relative;
     -webkit-perspective: 1000;
-            perspective: 1000;
-    -webkit-transition: all 0.2s;
-    transition: all 0.2s; }
+            perspective: 1000; }
     .card--works .card__content {
       padding: 15px 30px; }
     .card--works .btn-flip {

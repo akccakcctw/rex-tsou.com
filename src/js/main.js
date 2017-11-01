@@ -1,5 +1,7 @@
 import * as CardCase from './card-case/index';
 import skills from './data/skills';
+import works from './data/works';
+import openSources from './data/open-sources';
 
 document.addEventListener('DOMContentLoaded', () => {
   const caseContainer = document.querySelector('.card-case-container');
@@ -92,4 +94,24 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.parentNode.parentNode.classList.toggle('is-flipped');
     });
   });
+
+  const showWorks = (data, target) => {
+    const item = d3.select(target)
+      .selectAll('div')
+      .data(data)
+      .enter()
+      .append('div');
+    item
+      .classed('item', true)
+      .append('a')
+      .attr('href', d => d.url)
+      .attr('target', '_blank')
+      .attr('rel', 'noopener')
+      .append('div')
+      .classed('name', true)
+      .text(d => d.name);
+  };
+
+  showWorks(works, '.card__content--works .list');
+  showWorks(openSources, '.card__content--open-source .list');
 });
