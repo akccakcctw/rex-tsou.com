@@ -57,3 +57,8 @@ button {
 figure {
   margin: 0;
 }
+
+::selection {
+  background: rgba($c-base, .9);
+  text-shadow: 1px 1px 1px rgba(#000, .5);
+}
