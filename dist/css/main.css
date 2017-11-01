@@ -593,13 +593,17 @@ figure {
           align-content: center;
       cursor: pointer; }
       .card-case__btn-set .btn--about {
-        background-color: #A2AAB7; }
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(162, 170, 183, 0.75))), url("../assets/materials/paper.jpg");
+        background-image: linear-gradient(rgba(162, 170, 183, 0.75)), url("../assets/materials/paper.jpg"); }
       .card-case__btn-set .btn--ability {
-        background-color: #CEB49B; }
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(206, 180, 155, 0.75))), url("../assets/materials/paper.jpg");
+        background-image: linear-gradient(rgba(206, 180, 155, 0.75)), url("../assets/materials/paper.jpg"); }
       .card-case__btn-set .btn--blog {
-        background-color: #A9BEB7; }
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(169, 190, 183, 0.75))), url("../assets/materials/paper.jpg");
+        background-image: linear-gradient(rgba(169, 190, 183, 0.75)), url("../assets/materials/paper.jpg"); }
       .card-case__btn-set .btn--works {
-        background-color: #C78C8F; }
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(199, 140, 143, 0.75))), url("../assets/materials/paper.jpg");
+        background-image: linear-gradient(rgba(199, 140, 143, 0.75)), url("../assets/materials/paper.jpg"); }
         .card-case__btn-set .btn--works .icon {
           width: 19px; }
       .card-case__btn-set .btn .icon {
@@ -629,8 +633,8 @@ figure {
     top: 0;
     width: 100%;
     border-radius: 10px;
-    -webkit-transition: 1s ease-in-out;
-    transition: 1s ease-in-out;
+    -webkit-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
     -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
             box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
     max-height: 100%;
@@ -639,8 +643,6 @@ figure {
       -webkit-transform: translateX(35px);
               transform: translateX(35px); }
     .cards__card.is-taken {
-      -webkit-transform: translateX(100%);
-              transform: translateX(100%);
       margin-left: 10px; }
 
 .card {

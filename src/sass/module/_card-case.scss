@@ -15,7 +15,7 @@ $radius-default: 10px;
   justify-content: flex-start;
   align-items: flex-start;
   margin: 20px;
-  margin-bottom: $h-footer + 20 ;
+  margin-bottom: $h-footer + 20;
   overflow: auto;
   overflow-x: hidden;
   transition: 1s ease-in-out;
@@ -86,16 +86,16 @@ $radius-default: 10px;
       align-content: center;
       cursor: pointer;
       &--about {
-        background-color: $c-card--1;
+        background-image: linear-gradient(rgba($c-card--1, .75)), img-url('materials/paper.jpg');
       }
       &--ability {
-        background-color: $c-card--2;
+        background-image: linear-gradient(rgba($c-card--2, .75)), img-url('materials/paper.jpg');
       }
       &--blog {
-        background-color: $c-card--3;
+        background-image: linear-gradient(rgba($c-card--3, .75)), img-url('materials/paper.jpg');
       }
       &--works {
-        background-color: $c-card--4;
+        background-image: linear-gradient(rgba($c-card--4, .75)), img-url('materials/paper.jpg');
         .icon {
           width: 19px;
         }
@@ -132,7 +132,7 @@ $radius-default: 10px;
     top: 0;
     width: 100%;
     border-radius: $radius-default;
-    transition: 1s ease-in-out;
+    transition: .5s ease-in-out;
     box-shadow: 0 0 2px rgba(0, 0, 0, .2);
     max-height: 100%;
     overflow: hidden;
@@ -140,7 +140,6 @@ $radius-default: 10px;
       transform: translateX(35px);
     }
     &.is-taken {
-      transform: translateX(100%);
       margin-left: 10px;
     }
   }
