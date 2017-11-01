@@ -36,7 +36,7 @@ $radius-default: 10px;
   border: 1px solid $c-base;
   border-radius: $radius-default;
   padding: 1em;
-  color: $c-base;
+  color: $c-text;
   width: 80%;
   top: 50%;
   left: 50%;
@@ -166,6 +166,9 @@ $radius-default: 10px;
   }
   &--blog {
     background: linear-gradient(rgba($c-card--3, .75)), img-url('materials/paper.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   &--works {
     background: linear-gradient(rgba($c-card--4, .75)), img-url('materials/paper.jpg');
