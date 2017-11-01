@@ -160,6 +160,9 @@ $radius-default: 10px;
   }
   &--about {
     background-image: linear-gradient(rgba($c-card--1, .75)), img-url('materials/paper.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   &--skill {
     background: linear-gradient(rgba($c-card--2, .75)), img-url('materials/paper.jpg');

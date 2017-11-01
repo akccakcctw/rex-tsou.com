@@ -29,6 +29,7 @@ a {
   &:after {
     content: '';
     position: absolute;
+    left: 0;
     bottom: 2px;
     width: 1em;
     height: 1px;
