@@ -149,7 +149,12 @@ $radius-default: 10px;
   min-height: 100%;
   height: auto;
   padding: .5rem 1rem;
-  &__content {}
+  &__content {
+    .title {
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+    }
+  }
   &__title {
     font-weight: 300;
     letter-spacing: 2px;
@@ -174,6 +179,50 @@ $radius-default: 10px;
     align-items: center;
   }
   &--works {
-    background: linear-gradient(rgba($c-card--4, .75)), img-url('materials/paper.jpg');
+    position: relative;
+    perspective: 1000;
+    transition: all 0.2s;
+    .card__content {
+      padding: 15px 30px;
+    }
+    .btn-flip {
+      position: absolute;
+      padding: 10px;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      z-index: 9;
+    }
+    @mixin abs-fit {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+    .front {
+      @include abs-fit();
+      transform: rotateY(0);
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+      transition: all .7s;
+      background: linear-gradient(rgba($c-card--4, .75)), img-url('materials/paper.jpg');
+    }
+    .back {
+      @include abs-fit();
+      transform: rotateY(180deg);
+      backface-visibility: hidden;
+      transform-style: preserve-3d;
+      transition: all .7s;
+      background: linear-gradient(rgba($c-card--4, .75)), img-url('materials/paper.jpg');
+    }
+    &.is-flipped {
+      .front {
+        transform: rotateY(180deg);
+      }
+      .back {
+        transform: rotateY(0);
+      }
+    }
   }
 }

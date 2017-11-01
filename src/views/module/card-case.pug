@@ -22,4 +22,11 @@
           a(href="https://akccakcctw.github.io/", target="_blank", rel="noopener")
             h2.card__title 為了可能的聲音
       figure.cards__card.card.card--works(data-card="works")
-        .card__content
+        .card__content.card__content--works.front
+          .btn-flip
+            i(class="fa fa-repeat", aria-hidden="true")
+          .title 網站作品
+        .card__content.card__content--open-source.back
+          .btn-flip
+            i(class="fa fa-repeat", aria-hidden="true")
+          .title 開源專案

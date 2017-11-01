@@ -671,6 +671,9 @@ figure {
   min-height: 100%;
   height: auto;
   padding: .5rem 1rem; }
+  .card__content .title {
+    font-size: 1.4rem;
+    letter-spacing: 2px; }
   .card__title {
     font-weight: 300;
     letter-spacing: 2px;
@@ -706,5 +709,55 @@ figure {
         -ms-flex-align: center;
             align-items: center; }
   .card--works {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(199, 140, 143, 0.75))), url("../assets/materials/paper.jpg");
-    background: linear-gradient(rgba(199, 140, 143, 0.75)), url("../assets/materials/paper.jpg"); }
+    position: relative;
+    -webkit-perspective: 1000;
+            perspective: 1000;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s; }
+    .card--works .card__content {
+      padding: 15px 30px; }
+    .card--works .btn-flip {
+      position: absolute;
+      padding: 10px;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      z-index: 9; }
+    .card--works .front {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+      -webkit-transition: all .7s;
+      transition: all .7s;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(199, 140, 143, 0.75))), url("../assets/materials/paper.jpg");
+      background: linear-gradient(rgba(199, 140, 143, 0.75)), url("../assets/materials/paper.jpg"); }
+    .card--works .back {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+      -webkit-transition: all .7s;
+      transition: all .7s;
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(199, 140, 143, 0.75))), url("../assets/materials/paper.jpg");
+      background: linear-gradient(rgba(199, 140, 143, 0.75)), url("../assets/materials/paper.jpg"); }
+    .card--works.is-flipped .front {
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg); }
+    .card--works.is-flipped .back {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0); }

@@ -142,6 +142,13 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   drawSkill(skills);
+
+  var btnFlips = document.querySelectorAll('.btn-flip');
+  [].forEach.call(btnFlips, function (btn) {
+    btn.addEventListener('click', function () {
+      btn.parentNode.parentNode.classList.toggle('is-flipped');
+    });
+  });
 });
 
 })));
