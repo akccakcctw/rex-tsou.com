@@ -109,7 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
       .attr('rel', 'noopener')
       .append('div')
       .classed('name', true)
-      .text(d => d.name);
+      .text(d => d.name)
+      .append('img')
+      .classed('thumbnail', true)
+      .attr('src', d => d.cover);
   };
 
   showWorks(works, '.card__content--works .list');
