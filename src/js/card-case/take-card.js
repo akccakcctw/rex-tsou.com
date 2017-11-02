@@ -1,3 +1,4 @@
+export const getCardCase = () => document.querySelector('.card-case');
 export const getCard = (el) => {
   const currentBtn = el.dataset.to;
   return document.querySelector(`[data-card="${currentBtn}"]`);
@@ -13,12 +14,23 @@ export const leaveBtn = (el) => {
 export const expandCard = (el) => {
   const targetCard = getCard(el);
   const targetContent = targetCard.querySelector('.card__content');
-  Velocity(targetCard, { maxHeight: `${targetContent.getBoundingClientRect().height + 30}px` })
+  if (targetCard.classList.contains('big')) {
+    Velocity(targetCard, { width: `${window.innerWidth - getCardCase().offsetWidth - 80}px` }, {
+      duration: 500,
+      complete: () => {
+        setTimeout(() => {
+          Velocity(targetCard, { maxHeight: `${targetContent.getBoundingClientRect().height + 30}px` });
+        }, 500);
+      },
+    });
+  } else {
+    Velocity(targetCard, { maxHeight: `${targetContent.getBoundingClientRect().height + 30}px` });
+  }
 };
 export const takeCard = (el) => {
   const targetCard = getCard(el);
-  Velocity(targetCard, { translateX: '100%' }, {
-    duration: 1000,
+  Velocity(targetCard, { translateX: getCardCase().offsetWidth }, {
+    duration: 500,
     easing: 'easeInOut',
     complete: () => {
       targetCard.classList.add('is-taken');
@@ -28,8 +40,13 @@ export const takeCard = (el) => {
 };
 export const packCard = (el, cb) => {
   if (el) {
-    el.classList.remove('is-taken');
-    Velocity(el, { translateX: '', maxHeight: '100%' }, { complete: cb });
+    Velocity(el, { maxHeight: '100%' }, {
+      duration: 500,
+      complete: () => {
+        el.classList.remove('is-taken');
+        Velocity(el, { translateX: '', width: '100%' }, { complete: cb });
+      },
+    });
   } else {
     cb();
   }

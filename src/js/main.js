@@ -88,13 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   drawSkill(skills);
 
-  const btnFlips = document.querySelectorAll('.btn-flip');
-  [].forEach.call(btnFlips, (btn) => {
-    btn.addEventListener('click', () => {
-      btn.parentNode.parentNode.classList.toggle('is-flipped');
-    });
-  });
-
   const showWorks = (data, target) => {
     const item = d3.select(target)
       .selectAll('div')

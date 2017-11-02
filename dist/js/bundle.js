@@ -4,6 +4,9 @@
 	(factory());
 }(this, (function () { 'use strict';
 
+var getCardCase = function getCardCase() {
+  return document.querySelector('.card-case');
+};
 var getCard = function getCard(el) {
   var currentBtn = el.dataset.to;
   return document.querySelector('[data-card="' + currentBtn + '"]');
@@ -19,12 +22,23 @@ var leaveBtn = function leaveBtn(el) {
 var expandCard = function expandCard(el) {
   var targetCard = getCard(el);
   var targetContent = targetCard.querySelector('.card__content');
-  Velocity(targetCard, { maxHeight: targetContent.getBoundingClientRect().height + 30 + 'px' });
+  if (targetCard.classList.contains('big')) {
+    Velocity(targetCard, { width: window.innerWidth - getCardCase().offsetWidth - 80 + 'px' }, {
+      duration: 500,
+      complete: function complete() {
+        setTimeout(function () {
+          Velocity(targetCard, { maxHeight: targetContent.getBoundingClientRect().height + 30 + 'px' });
+        }, 500);
+      }
+    });
+  } else {
+    Velocity(targetCard, { maxHeight: targetContent.getBoundingClientRect().height + 30 + 'px' });
+  }
 };
 var takeCard = function takeCard(el) {
   var targetCard = getCard(el);
-  Velocity(targetCard, { translateX: '100%' }, {
-    duration: 1000,
+  Velocity(targetCard, { translateX: getCardCase().offsetWidth }, {
+    duration: 500,
     easing: 'easeInOut',
     complete: function complete() {
       targetCard.classList.add('is-taken');
@@ -34,8 +48,13 @@ var takeCard = function takeCard(el) {
 };
 var packCard = function packCard(el, cb) {
   if (el) {
-    el.classList.remove('is-taken');
-    Velocity(el, { translateX: '', maxHeight: '100%' }, { complete: cb });
+    Velocity(el, { maxHeight: '100%' }, {
+      duration: 500,
+      complete: function complete() {
+        el.classList.remove('is-taken');
+        Velocity(el, { translateX: '', width: '100%' }, { complete: cb });
+      }
+    });
   } else {
     cb();
   }
@@ -191,13 +210,6 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   drawSkill(skills);
-
-  var btnFlips = document.querySelectorAll('.btn-flip');
-  [].forEach.call(btnFlips, function (btn) {
-    btn.addEventListener('click', function () {
-      btn.parentNode.parentNode.classList.toggle('is-flipped');
-    });
-  });
 
   var showWorks = function showWorks(data, target) {
     var item = d3.select(target).selectAll('div').data(data).enter().append('div');
