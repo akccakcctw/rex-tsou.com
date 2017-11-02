@@ -95,8 +95,14 @@ document.addEventListener('DOMContentLoaded', () => {
       .enter()
       .append('div');
 
-    item
-      .classed('item', true)
+    // content
+    const content =
+      item
+        .classed('item', true)
+        .append('div')
+        .classed('content', true);
+
+    content
       .append('a')
       .attr('href', d => d.url)
       .attr('target', '_blank')
@@ -105,8 +111,18 @@ document.addEventListener('DOMContentLoaded', () => {
       .classed('name', true)
       .text(d => d.name);
 
+    content
+      .filter(d => d.date)
+      .append('time')
+      .text(d => `${d.date.y}-${d.date.m}`);
+
+    // thumbnail
     item
-      .append('div')
+      .filter(d => d.cover)
+      .append('a')
+      .attr('href', d => d.url)
+      .attr('target', '_blank')
+      .attr('rel', 'noopener')
       .classed('thumbnail', true)
       .append('img')
       .attr('src', d => d.cover);
