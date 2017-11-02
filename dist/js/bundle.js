@@ -164,6 +164,10 @@ document.addEventListener('DOMContentLoaded', function () {
   var caseContainer = document.querySelector('.card-case-container');
   var caseEl = document.querySelector('.card-case');
   var btnList = caseEl.querySelectorAll('.btn-set .btn');
+  var getBgColor = function getBgColor(el) {
+    var colorVal = window.getComputedStyle(el, null).getPropertyValue('background-image');
+    return colorVal.match(/rgba\(.+?,.+?,.+?,.+?\)/)[0];
+  };
   console.log('rex-tsou.com');
 
   [].forEach.call(btnList, function (btn) {
@@ -175,6 +179,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     btn.addEventListener('click', function (e) {
       var el = e.currentTarget;
+      var targetColor = getBgColor(el);
+      document.querySelector('.bg-mask').style.background = targetColor;
       var takenCard = document.querySelector('.is-taken');
       packCard(takenCard, function () {
         caseContainer.classList.add('is-active');
