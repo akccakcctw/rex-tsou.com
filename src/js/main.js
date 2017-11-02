@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .data(data)
       .enter()
       .append('div');
+
     item
       .classed('item', true)
       .append('a')
@@ -102,12 +103,15 @@ document.addEventListener('DOMContentLoaded', () => {
       .attr('rel', 'noopener')
       .append('div')
       .classed('name', true)
-      .text(d => d.name)
-      .append('img')
+      .text(d => d.name);
+
+    item
+      .append('div')
       .classed('thumbnail', true)
+      .append('img')
       .attr('src', d => d.cover);
   };
 
-  showWorks(websites, '.card__content--websites .list');
-  showWorks(openSources, '.card__content--open-source .list');
+  showWorks(websites, '.type--websites .list');
+  showWorks(openSources, '.type--open-source .list');
 });

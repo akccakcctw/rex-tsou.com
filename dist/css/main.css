@@ -672,7 +672,7 @@ figure {
   height: auto;
   padding: .5rem 1rem; }
   .card__content .title {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     letter-spacing: 2px; }
   .card__title {
     font-weight: 300;
@@ -722,3 +722,22 @@ figure {
       right: 0;
       cursor: pointer;
       z-index: 9; }
+    .card--works .type {
+      margin-top: 1.5rem; }
+    .card--works .list > .item {
+      margin-top: 30px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .card--works .list > .item a {
+        -webkit-box-flex: 2;
+            -ms-flex: 2;
+                flex: 2;
+        -ms-flex-item-align: start;
+            align-self: flex-start;
+        letter-spacing: 1.4px;
+        font-weight: bold; }
+      .card--works .list > .item .thumbnail {
+        -webkit-box-flex: 3;
+            -ms-flex: 3;
+                flex: 3; }

@@ -151,7 +151,7 @@ $radius-default: 10px;
   padding: .5rem 1rem;
   &__content {
     .title {
-      font-size: 1.4rem;
+      font-size: 1.8rem;
       letter-spacing: 2px;
     }
   }
@@ -193,12 +193,23 @@ $radius-default: 10px;
       cursor: pointer;
       z-index: 9;
     }
-    @mixin abs-fit {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
+    .type {
+      margin-top: 1.5rem;
+    }
+    .list {
+      >.item {
+        margin-top: 30px;
+        display: flex;
+        a {
+          flex: 2;
+          align-self: flex-start;
+          letter-spacing: 1.4px;
+          font-weight: bold;
+        }
+        .thumbnail {
+          flex: 3;
+        }
+      }
     }
   }
 }

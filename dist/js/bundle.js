@@ -213,17 +213,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var showWorks = function showWorks(data, target) {
     var item = d3.select(target).selectAll('div').data(data).enter().append('div');
+
     item.classed('item', true).append('a').attr('href', function (d) {
       return d.url;
     }).attr('target', '_blank').attr('rel', 'noopener').append('div').classed('name', true).text(function (d) {
       return d.name;
-    }).append('img').classed('thumbnail', true).attr('src', function (d) {
+    });
+
+    item.append('div').classed('thumbnail', true).append('img').attr('src', function (d) {
       return d.cover;
     });
   };
 
-  showWorks(websites, '.card__content--websites .list');
-  showWorks(openSources, '.card__content--open-source .list');
+  showWorks(websites, '.type--websites .list');
+  showWorks(openSources, '.type--open-source .list');
 });
 
 })));
