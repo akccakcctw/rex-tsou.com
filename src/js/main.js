@@ -1,6 +1,6 @@
 import * as CardCase from './card-case/index';
 import skills from './data/skills';
-import works from './data/works';
+import websites from './data/websites';
 import openSources from './data/open-sources';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -108,6 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
       .attr('src', d => d.cover);
   };
 
-  showWorks(works, '.card__content--works .list');
+  showWorks(websites, '.card__content--websites .list');
   showWorks(openSources, '.card__content--open-source .list');
 });

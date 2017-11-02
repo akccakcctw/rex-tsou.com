@@ -95,7 +95,7 @@ var skills = [{
   level: 1
 }];
 
-var works = [{
+var websites = [{
   name: 'Teach For Taiwan 為台灣而教 - 官網',
   url: 'http://www.teach4taiwan.org/',
   introl: '',
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   };
 
-  showWorks(works, '.card__content--works .list');
+  showWorks(websites, '.card__content--websites .list');
   showWorks(openSources, '.card__content--open-source .list');
 });
 
