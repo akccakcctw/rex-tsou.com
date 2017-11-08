@@ -748,6 +748,15 @@ figure {
             -ms-flex: 3;
                 flex: 3; }
 
+.card-case-container {
+  opacity: 0; }
+
+.pace-done .card-case-container {
+  opacity: 1; }
+
+.pace .pace-activity {
+  background: radial-gradient(farthest-corner at 40px 40px, #FFF 0, #FFF 10%, #AAA 80%, #FFF 98%, #333 100%); }
+
 .bg-mask {
   position: fixed;
   width: 100%;
