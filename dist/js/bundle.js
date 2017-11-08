@@ -19,7 +19,7 @@ var leaveBtn = function leaveBtn(el) {
   var targetCard = getCard(el);
   targetCard.classList.remove('is-hover');
 };
-var expandCard = function expandCard(el) {
+var expandCard = function expandCard(el, cb) {
   var targetCard = getCard(el);
   var targetContent = targetCard.querySelector('.card__content');
   if (targetCard.classList.contains('big')) {
@@ -27,22 +27,22 @@ var expandCard = function expandCard(el) {
       duration: 500,
       complete: function complete() {
         setTimeout(function () {
-          Velocity(targetCard, { maxHeight: targetContent.getBoundingClientRect().height + 30 + 'px' });
+          Velocity(targetCard, { maxHeight: targetContent.getBoundingClientRect().height + 30 + 'px' }, { complete: cb });
         }, 500);
       }
     });
   } else {
-    Velocity(targetCard, { maxHeight: targetContent.getBoundingClientRect().height + 30 + 'px' });
+    Velocity(targetCard, { maxHeight: targetContent.getBoundingClientRect().height + 30 + 'px' }, { complete: cb });
   }
 };
-var takeCard = function takeCard(el) {
+var takeCard = function takeCard(el, cb) {
   var targetCard = getCard(el);
   Velocity(targetCard, { translateX: getCardCase().offsetWidth }, {
     duration: 500,
     easing: 'easeInOut',
     complete: function complete() {
       targetCard.classList.add('is-taken');
-      expandCard(el);
+      expandCard(el, cb);
     }
   });
 };
@@ -164,6 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var caseContainer = document.querySelector('.card-case-container');
   var caseEl = document.querySelector('.card-case');
   var btnList = caseEl.querySelectorAll('.btn-set .btn');
+  var isAnim = false;
   var getBgColor = function getBgColor(el) {
     var colorVal = window.getComputedStyle(el, null).getPropertyValue('background-image');
     return colorVal.match(/rgba\(.+?,.+?,.+?,.+?\)/)[0];
@@ -178,13 +179,17 @@ document.addEventListener('DOMContentLoaded', function () {
       leaveBtn(e.currentTarget);
     });
     btn.addEventListener('click', function (e) {
+      if (isAnim) return;
+      isAnim = true;
       var el = e.currentTarget;
       var targetColor = getBgColor(el);
       document.querySelector('.bg-mask').style.background = targetColor;
       var takenCard = document.querySelector('.is-taken');
       packCard(takenCard, function () {
         caseContainer.classList.add('is-active');
-        takeCard(el);
+        takeCard(el, function () {
+          isAnim = false;
+        });
       });
     });
   });

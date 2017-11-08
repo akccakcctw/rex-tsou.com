@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const caseContainer = document.querySelector('.card-case-container');
   const caseEl = document.querySelector('.card-case');
   const btnList = caseEl.querySelectorAll('.btn-set .btn');
+  let isAnim = false;
   const getBgColor = (el) => {
     const colorVal = window.getComputedStyle(el, null).getPropertyValue('background-image');
     return colorVal.match(/rgba\(.+?,.+?,.+?,.+?\)/)[0];
@@ -17,13 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('mouseenter', (e) => { CardCase.enterBtn(e.currentTarget); });
     btn.addEventListener('mouseleave', (e) => { CardCase.leaveBtn(e.currentTarget); });
     btn.addEventListener('click', (e) => {
+      if (isAnim) return;
+      isAnim = true;
       const el = e.currentTarget;
       const targetColor = getBgColor(el);
       document.querySelector('.bg-mask').style.background = targetColor;
       const takenCard = document.querySelector('.is-taken');
       CardCase.packCard(takenCard, () => {
         caseContainer.classList.add('is-active');
-        CardCase.takeCard(el);
+        CardCase.takeCard(el, () => {
+          isAnim = false;
+        });
       });
     });
   });

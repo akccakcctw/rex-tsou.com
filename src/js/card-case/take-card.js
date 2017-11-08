@@ -11,7 +11,7 @@ export const leaveBtn = (el) => {
   const targetCard = getCard(el);
   targetCard.classList.remove('is-hover');
 };
-export const expandCard = (el) => {
+export const expandCard = (el, cb) => {
   const targetCard = getCard(el);
   const targetContent = targetCard.querySelector('.card__content');
   if (targetCard.classList.contains('big')) {
@@ -19,22 +19,22 @@ export const expandCard = (el) => {
       duration: 500,
       complete: () => {
         setTimeout(() => {
-          Velocity(targetCard, { maxHeight: `${targetContent.getBoundingClientRect().height + 30}px` });
+          Velocity(targetCard, { maxHeight: `${targetContent.getBoundingClientRect().height + 30}px` }, { complete: cb });
         }, 500);
       },
     });
   } else {
-    Velocity(targetCard, { maxHeight: `${targetContent.getBoundingClientRect().height + 30}px` });
+    Velocity(targetCard, { maxHeight: `${targetContent.getBoundingClientRect().height + 30}px` }, { complete: cb });
   }
 };
-export const takeCard = (el) => {
+export const takeCard = (el, cb) => {
   const targetCard = getCard(el);
   Velocity(targetCard, { translateX: getCardCase().offsetWidth }, {
     duration: 500,
     easing: 'easeInOut',
     complete: () => {
       targetCard.classList.add('is-taken');
-      expandCard(el);
+      expandCard(el, cb);
     },
   });
 };
