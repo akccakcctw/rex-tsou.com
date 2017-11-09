@@ -39,4 +39,14 @@ export default [
       m: 6,
     },
   },
+  {
+    name: '讀.書.人 我們這一代：五年級作家 - 專題頁',
+    url: 'https://reader.udn.com/act/fifthgrade/',
+    intro: '',
+    cover: 'assets/works/reader_fifthgrade.jpg',
+    date: {
+      y: 2016,
+      m: 1,
+    },
+  },
 ];
