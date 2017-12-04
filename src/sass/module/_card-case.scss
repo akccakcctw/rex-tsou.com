@@ -19,6 +19,11 @@ $radius-default: 10px;
   overflow: auto;
   overflow-x: hidden;
   transition: 1s ease-in-out;
+  // hidden in mobile and tablet
+  display: none;
+  @include for-desktop-up {
+    display: block;
+  }
   &.is-active {
     .card-case {
       top: 0;
