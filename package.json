@@ -22,8 +22,8 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "*",
     "gulp-babel": "*",
-    "gulp-file": "^0.3.0",
-    "gulp-imagemin": "^3.4.0",
+    "gulp-file": "^0.4.0",
+    "gulp-imagemin": "^4.1.0",
     "gulp-load-plugins": "*",
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
@@ -31,8 +31,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
-    "rollup": "^0.50.1",
+    "rollup": "^0.57.1",
     "rollup-plugin-babel": "^3.0.2",
-    "rollup-plugin-uglify": "^2.0.1"
+    "rollup-plugin-uglify": "^3.0.0"
   }
 }
