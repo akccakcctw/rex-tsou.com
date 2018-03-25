@@ -14,7 +14,7 @@
   "devDependencies": {
     "babel-core": "*",
     "babel-preset-es2015": "^6.24.1",
-    "babel-register": "*",
+    "babel-register": "^6.26.0",
     "browser-sync": "*",
     "eslint": "*",
     "eslint-config-airbnb-base": "*",
@@ -31,7 +31,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
-    "rollup": "^0.50.0",
+    "rollup": "^0.50.1",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-uglify": "^2.0.1"
   }
