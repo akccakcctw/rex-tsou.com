@@ -7,7 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const caseContainer = document.querySelector('.card-case-container');
   const caseEl = document.querySelector('.card-case');
   const btnList = caseEl.querySelectorAll('.btn-set .btn');
+  const bgConfig = {
+    url: 'assets/backgrounds/low-poly.svg',
+    opacity: '.4',
+  };
   let isAnim = false;
+  let hasBg = false;
   const getBgColor = (el) => {
     const colorVal = window.getComputedStyle(el, null).getPropertyValue('background-image');
     return colorVal.match(/rgba\(.+?,.+?,.+?,.+?\)/)[0];
@@ -22,16 +27,38 @@ document.addEventListener('DOMContentLoaded', () => {
       isAnim = true;
       const el = e.currentTarget;
       const targetColor = getBgColor(el);
-      document.querySelector('.bg-mask').style.background = targetColor;
+
+      if (!hasBg) document.querySelector('.bg-mask').style.opacity = '0';
       const takenCard = document.querySelector('.is-taken');
       CardCase.packCard(takenCard, () => {
         caseContainer.classList.add('is-active');
         CardCase.takeCard(el, () => {
+          setBackground({
+            url: `url(${bgConfig.url})`,
+            opacity: bgConfig.opacity,
+            targetColor,
+          });
+          hasBg = true;
           isAnim = false;
         });
       });
     });
   });
+
+  function setBackground ({
+    url,
+    opacity = '.4',
+    repeat = 'no-repeat',
+    size = 'cover',
+    targetColor = '#000',
+  } = {}) {
+    const bgEl = document.querySelector('.bg-mask');
+    bgEl.style.backgroundColor = targetColor;
+    bgEl.style.backgroundImage = url;
+    bgEl.style.backgroundRepeat = repeat;
+    bgEl.style.backgroundSize = size;
+    bgEl.style.opacity = opacity;
+  }
 
   const drawSkill = (data) => {
     const margin = {
